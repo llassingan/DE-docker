@@ -10,12 +10,12 @@ def _get_data():
     conn = None
     try:
         #connect to both of the db
-        conn = psycopg2.connect(host="localhost",
+        conn = psycopg2.connect(host="host.docker.internal",
                                 port="5961",
                                 database="airflow",
                                 user="airflow",
                                 password="airflow")
-        conn2 = psycopg2.connect(host="localhost",
+        conn2 = psycopg2.connect(host="host.docker.internal",
                                 port="5105",
                                 database="airflow2",
                                 user="airflow2",
@@ -54,7 +54,7 @@ def _load_data(ti):
     """ loading data from the first database and insert into second database"""
     conn = None
     try:
-        conn = psycopg2.connect(host="localhost",
+        conn = psycopg2.connect(host="host.docker.internal",
                                 port="5105",
                                 database="airflow2",
                                 user="airflow2",

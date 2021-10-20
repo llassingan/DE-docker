@@ -23,7 +23,19 @@ syntax = [["""
             username VARCHAR ( 50 ) UNIQUE NOT NULL,
             info VARCHAR ( 50 ) NOT NULL 
             );
-        """]]
+        """],["""
+        INSERT INTO accounts(username, info) VALUES ('almanik','admin');
+        ""","""
+        INSERT INTO accounts(username, info) VALUES ('kalmani','admin');
+        ""","""
+        INSERT INTO accounts(username, info) VALUES ('ikalman','user');
+        """],["""
+        INSERT INTO accounts(username, info) VALUES ('nikalma','admin');
+        ""","""
+        INSERT INTO accounts(username, info) VALUES ('anikalm','admin');
+        ""","""
+        INSERT INTO accounts(username, info) VALUES ('manikal','user');
+        """,]]
 
 def dbinit(h,p,d,u,ps,com):
     host = h
@@ -59,3 +71,7 @@ dbinit("localhost","5961","airflow","airflow","airflow",syntax[0])
 dbinit("localhost","5105","airflow2","airflow2","airflow2",syntax[1])
 
 #add more values to database1
+# dbinit("localhost","5961","airflow","airflow","airflow",syntax[2])
+
+#add more values to database1
+# dbinit("localhost","5961","airflow","airflow","airflow",syntax[3])
